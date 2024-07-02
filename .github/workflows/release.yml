@@ -21,11 +21,8 @@ jobs:
       - name: Build artifacts
         run: bun run build
 
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: github-pages
-          path: dist
+      - name: Upload production artifacts
+        uses: actions/upload-pages-artifact@v3
   deploy:
     needs: build
     permissions:
